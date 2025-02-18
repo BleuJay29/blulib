@@ -108,4 +108,7 @@ namespace Blu {
             Sink->Close();
             gra->drawgeometry(Path, color, thickness);
         }
+        void Shape::LoadBSP(const char* filename) {
+            std::ifstream bsp(filename);
+        }
 }

@@ -98,6 +98,7 @@ namespace Blu {
         void AddBezier(Spot p1, Spot p2, Spot p3);
         void DrawFilled(int color);
         void DrawOutline(int color, int thickness = 1);
+        void LoadBSP(const char * filename);
     private:
         ID2D1PathGeometry* Path;
         ID2D1GeometrySink* Sink;
@@ -193,6 +194,17 @@ namespace Blu {
         void collide(std::vector<StillBody> Stillbody);
         bool IsInside(Area area);
         void runScript(void (*func)(PhysicsBody&));
+    };
+    class Button {
+    public:
+        Rect hitbox = { 0, 0, 0, 0 };
+
+        Button(Rect HITBOX);
+
+        bool IsClicked(Input* input);
+        bool IsRightClicked(Input* input);
+        bool IsOver();
+        void draw(u32 color);
     };
     class Clock {
     public:
