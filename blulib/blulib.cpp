@@ -6,6 +6,7 @@ using namespace Blu;
 #include <d2d1_1.h>
 #include <fstream>
 #include <ios>
+#include <vector>
 #include "blulib.h"
 #define STB_TRUETYPE_IMPLEMENTATION
 #include "stb_truetype.h"
@@ -118,8 +119,8 @@ int Blu::BluMain(HINSTANCE hInstance, HINSTANCE prevInstance, int nCmdShow) {
 				bool is_down = ((message.lParam & (1 << 31)) == 0);
 #define process_button(b, vk)\
 case (vk): {\
+input.buttons[b].changed = is_down != input.buttons[b].isdown;\
 input.buttons[b].isdown = is_down;\
-input.buttons[b].changed = true;\
 }break;
 				switch (vk_code) {
 					process_button(K_UP, VK_UP);
