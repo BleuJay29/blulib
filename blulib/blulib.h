@@ -59,6 +59,7 @@ namespace Blu {
     template <typename T>
     std::vector<std::vector<T>> GetAllUniqueCombos(const std::vector<T>& arr);
     std::string inttostring(int n);
+    void tick(float fps = 30);
     bool colliderect(Rect rect1, Rect rect2);
     bool collidespot(Spot spot, Rect rect2);
     int collidelist(Rect rect, std::vector<Rect> rects);

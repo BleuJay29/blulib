@@ -122,4 +122,11 @@ namespace Blu {
 		if (i < 0) return str;
 		return str;
 	}
+	void tick(float fps)
+	{
+		float frametime = fps/1000;
+		if (dt < frametime) {
+			Sleep(frametime - dt);
+		}
+	}
 }
